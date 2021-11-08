@@ -48,6 +48,24 @@ def run_jarvis():
     elif 'bye' in command:
         talk('Bye saketh,have a nice day')
         print('Bye saketh,have a nice day')
+    elif 'message' in command:
+        talk("enter the phone number you want the msg sent to")
+        phnno = str(input("enter the phone no you want the msg sent to"))
+        talk(phnno)
+        talk("enter the message")
+        msg = str(input("enter the message"))
+        talk(msg)
+        talk("enter when you want to send 'hour'")
+        hour = int(input("enter when you want to send 'hour'"))
+        talk(hour)
+        talk("what about minutes")
+        min = int(input("minutes?"))
+        talk(min)
+        pywhatkit.sendwhatmsg(phnno, msg, hour, min)
+    elif 'how are you' in command:
+        talk("I'm splendid!Thank you for asking")
+        print("I'm splendid!Thank you for asking")
+
 
     else:
         talk("repeat the question")
